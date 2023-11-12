@@ -1,0 +1,141 @@
+
+@keyframes pixel-color-animation {
+    25%{
+        background-color: blue;
+    }
+
+    50%{
+        background-color: rgb(2, 2, 77);
+    }
+
+    75%{
+        background-color:#9400FF
+    }
+
+    100%{
+        background-color: #24023b;
+    }
+}
+
+
+@keyframes pinki-background {
+    50%{
+        background-color: #690140;
+    }
+
+    75%{
+        background-color: #fa0196;
+    }
+}
+
+
+
+
+
+.massage{
+
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 38px;
+    text-align: center;
+    font-weight: bold;
+    color: orangered;
+    background-color: #0a0a0a;
+    max-width: 940px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+ 
+
+}
+
+.content{
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(182, 111, 248);
+    display: flex;
+    gap: 10px;
+    max-width: 940px;
+    border: #d10680 2px solid;
+    margin: 0 auto;
+    background-color:#d10680 ;
+    height: 70%;
+    animation: pinki-background 12s infinite;
+    margin-bottom: 60px;
+}
+
+.art-board{
+
+    background-color: #0a0a0a;
+    width: 100%;
+    padding: 4px;
+    
+}
+
+.control-center{
+
+    background-color: rgb(1, 12, 17);
+    width: 100%;
+    flex:2;
+    padding:4px
+    
+
+}
+
+.icons{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 90px;
+    margin-bottom: 10px;
+}
+
+.art{
+    text-align: center;
+    
+}
+
+.rainbow,.eraser,.grid,.wheel,.reset{
+    width: 30px;
+}
+
+.rainbow-btn,.eraser-btn,.grid-btn,.color-wheel,.reset-btn{
+    border-radius: 50%;
+    border: #d10680 2px solid;
+    animation: pixel-color-animation 15s infinite;
+    background-color: black;
+}       
+
+
+a{
+    display: none;
+}
+
+
+footer{
+    text-align: center;
+}
+
+.grid-options{
+    text-align: center;
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 37px;
+    color:orangered;
+    
+    
+}
+
+
+.thirty,.fourty,.sixty{
+    font-family: 'Pixelify Sans', sans-serif;
+    display: inline;
+    font-size: 20px;
+    color: #9400FF;
+}
+
+.buttons{
+    display: none;
+    margin-bottom: 10px;
+}
+
+
