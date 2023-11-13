@@ -21,35 +21,56 @@ function gredPrinter(givenSize) {
 }
 
 function makeGrid(gridSize) {
-    let mouseDown = false; // Variable to track mouse click state
+    let interactionActive = false; // Variable to track interaction state
 
     for (let i = 0; i < gridSize; i++) {
         let row = document.createElement("div");
         row.className = "rowCells";
-        
+
+        // Mouse event listeners
         row.addEventListener("mousedown", () => {
-            mouseDown = true; // Set the mouse state to clicked
+            interactionActive = true; // Set the interaction state to active
         });
-        
+
         row.addEventListener("mouseup", () => {
-            mouseDown = false; // Set the mouse state to not clicked
+            interactionActive = false; // Set the interaction state to inactive
         });
-        
+
+        // Touch event listeners
+        row.addEventListener("touchstart", () => {
+            interactionActive = true; // Set the interaction state to active
+        });
+
+        row.addEventListener("touchend", () => {
+            interactionActive = false; // Set the interaction state to inactive
+        });
+
         for (let j = 0; j < gridSize; j++) {
             let smallCell = document.createElement("div");
             smallCell.className = "smallCells";
-            
-            smallCell.addEventListener("mouseenter", () => {
-                if (mouseDown) {
+
+            // Mouse and touch event for coloring on interaction
+            const setColor = () => {
+                if (interactionActive) {
                     smallCell.style.backgroundColor = "blue"; // Change the color on click-and-drag
                 }
+            };
+
+            // Mouse event listeners
+            smallCell.addEventListener("mouseenter", setColor);
+
+            // Touch event listeners
+            smallCell.addEventListener("touchmove", (event) => {
+                event.preventDefault(); // Prevent default touch behavior
+                setColor();
             });
-            
+
             row.appendChild(smallCell);
         }
         board.appendChild(row);
     }
 }
+
 
 
 gredPrinter(currentSize);
