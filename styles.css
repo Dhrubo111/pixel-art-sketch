@@ -132,3 +132,59 @@ footer{
     font-size: 20px;
     color: #9400FF;
 }
+
+
+.rowCells{
+    display: flex;
+    border: 1px solid salmon;
+    
+}
+
+.smallCells{
+   
+    flex: 1;
+    padding-bottom: 5%;
+    border: 1px solid ; /* Adjust the color to your preference */
+
+    
+
+}
+
+
+@media (max-width : 768px) {
+    
+    .rowCells{
+        display: flex;
+        border: 1px solid salmon;
+        
+    }
+
+    .smallCells{
+   
+        flex: 1;
+        padding-bottom: 8%;
+        border: 1px solid ; /* Adjust the color to your preference */
+    
+        
+    
+    }
+
+    .art{
+        margin-bottom: 26%;
+    }
+
+}
+
+
+.smallCells{
+    background-color: aliceblue;
+}
+
+
+
+
+
+
+
+
+
