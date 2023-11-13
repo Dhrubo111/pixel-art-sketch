@@ -21,20 +21,36 @@ function gredPrinter(givenSize) {
 }
 
 function makeGrid(gridSize) {
+    let mouseDown = false; // Variable to track mouse click state
+
     for (let i = 0; i < gridSize; i++) {
         let row = document.createElement("div");
         row.className = "rowCells";
+        
+        row.addEventListener("mousedown", () => {
+            mouseDown = true; // Set the mouse state to clicked
+        });
+        
+        row.addEventListener("mouseup", () => {
+            mouseDown = false; // Set the mouse state to not clicked
+        });
+        
         for (let j = 0; j < gridSize; j++) {
             let smallCell = document.createElement("div");
             smallCell.className = "smallCells";
-            smallCell.addEventListener("mouseover", () => {
-                smallCell.style.backgroundColor = "blue"; // Change the background color on hover
-            })
+            
+            smallCell.addEventListener("mouseenter", () => {
+                if (mouseDown) {
+                    smallCell.style.backgroundColor = "blue"; // Change the color on click-and-drag
+                }
+            });
+            
             row.appendChild(smallCell);
         }
         board.appendChild(row);
     }
 }
+
 
 gredPrinter(currentSize);
 
