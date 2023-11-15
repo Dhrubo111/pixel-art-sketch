@@ -5,11 +5,12 @@ let gredMessage = document.querySelector(".grid-options");
 let restBtn = document.querySelector(".reset-btn");
 let board = document.querySelector(".board");
 let art = document.querySelector(".art")
+let eraseBtn = document.querySelector(".eraser-btn")
+let pixel = document.querySelectorAll(".smallCells")
 let gred = 30;
 let defaultGred = 16;
 let clickCount = 1;
 let currentSize = defaultGred;
-
 
 
 
@@ -50,7 +51,7 @@ function makeGrid(gridSize) {
             smallCell.className = "smallCells";
 
             // Mouse and touch event for coloring on interaction
-            const setColor = () => {
+            let setColor = () => {
                 if (interactionActive) {
                     smallCell.style.backgroundColor = "blue"; // Change the color on click-and-drag
                 }
@@ -61,7 +62,7 @@ function makeGrid(gridSize) {
 
             // Touch event listeners
             smallCell.addEventListener("touchmove", (event) => {
-                event.preventDefault(); // Prevent default touch behavior
+                
                 setColor();
             });
 
